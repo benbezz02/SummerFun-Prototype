@@ -1,6 +1,6 @@
 import random
 
-EmployeeState = ["Current", "Past", "Dismissed", "Pending"]
+employeeState = ["Current", "Past", "Dismissed", "Pending"]
 
 
 class Employee:
@@ -13,7 +13,7 @@ class Employee:
         self.birthday = birthday
         self.employeeID = self.generateEmployeeID()
         self.password = password
-        if status not in EmployeeState:
+        if status not in employeeState:
             print("Invalid Status entered.")
             return
         else:
@@ -29,12 +29,13 @@ class Employee:
         if self.status == status:
             return None
         else:
-            if status not in EmployeeState:
+            if status not in employeeState:
                 print("Invalid Status entered.")
                 return
             else:
                 self.status = status
-            return 0
+                return self
+
 
 
 class Playworker(Employee):
