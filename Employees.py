@@ -27,7 +27,7 @@ class Employee:
     def editStatus(self, status):
 
         if self.status == status:
-            return None
+            return
         else:
             if status not in employeeState:
                 print("Invalid Status entered.")

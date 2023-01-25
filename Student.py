@@ -1,4 +1,5 @@
 import random
+import Payments
 
 studentState = ["Current", "Past", "Suspended", "Pending"]
 
@@ -14,11 +15,13 @@ class Student:
         self.studentID = Student.generateStudentID(self)
         self.password = password
         self.status = "Pending"
+        self.pastPayments = []
+        self.currentPayment = None
 
     def editStatus(self, status):
 
         if self.status == status:
-            return None
+            return
         else:
             if status not in studentState:
                 print("Invalid Status entered.")
@@ -33,3 +36,18 @@ class Student:
         # print(f"Student's ID is {StudentID.lower()}")
         return StudentID.lower()
 
+    def newPayment(self, amount, month, year):
+
+        self.currentPayment = Payments.Payment(self, amount, month, year)
+
+    def paymentPaid(self):
+
+        if self.currentPayment is None:
+            return
+        else:
+            self.currentPayment.paymentPaid()
+            self.currentPayment = None
+
+    def studentPayments(self):
+
+        Payments.Payment.printPayments(self)
