@@ -47,7 +47,7 @@ class Student:
         else:
             print(f"Student {self.firstname} {self.lastname} needs to pay {self.currentPayment.amount} for {self.currentPayment.month} {self.currentPayment.year}")
 
-    def paymentPaid(self):
+    def currentPaid(self):
 
         if self.currentPayment is None:
             return

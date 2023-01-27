@@ -55,7 +55,7 @@ def pastStatus():
 
 def paymentOperations():
     students[1].newPayment(18, "June", "2022")
-    students[1].paymentPaid()
+    students[1].currentPaid()
     students[1].newPayment(18, "August", "2022")
 
     students[1].studentPayments()
@@ -63,7 +63,7 @@ def paymentOperations():
     students[1].printCurrentPayment()
 
     print("\nPaying what needs to be paid...")
-    students[1].paymentPaid()
+    students[1].currentPaid()
 
     students[1].studentPayments()
 
