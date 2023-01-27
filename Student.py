@@ -40,6 +40,13 @@ class Student:
 
         self.currentPayment = Payments.Payment(self, amount, month, year)
 
+    def printCurrentPayment(self):
+
+        if self.currentPayment is None:
+            print(f"Student {self.firstname} {self.lastname} is up to date on payments.")
+        else:
+            print(f"Student {self.firstname} {self.lastname} needs to pay {self.currentPayment.amount} for {self.currentPayment.month} {self.currentPayment.year}")
+
     def paymentPaid(self):
 
         if self.currentPayment is None:

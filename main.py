@@ -2,7 +2,10 @@ import Student
 import Class
 import Employees
 import Timetables
-import Payments
+import FileManagement
+
+students = []
+empoyees = []
 
 s1 = Student.Student("Ben", "Bezzina", "137102L", "15/04/2002", "ben1024")
 s2 = Student.Student("Chris", "Azzopardi", "102088L", "05/02/2002", "ca2002")
@@ -31,6 +34,9 @@ s1.paymentPaid()
 s1.newPayment(18, "August", "2022")
 s1.paymentPaid()
 s1.studentPayments()
+s1.printCurrentPayment()
 
 t1 = Timetables.Timetable(9)
 t1.printTimetable()
+
+
