@@ -14,6 +14,13 @@ class Event:
             return
         else:
             self.status = status
+        self.classes = []
+
+    def addEventToClass(self, Class):
+
+        Class.events.append(self)
+
+        self.classes.append(Class.classnumber)
 
     def editEvent(self, name, date, location, description, status):
 
@@ -31,3 +38,11 @@ class Event:
                 return
             else:
                 self.status = status
+
+    def printEvent(self):
+        print(f"\nClass/es {self.classes} have the following Event:")
+
+        print(self.name)
+        print(self.date)
+        print(self.location)
+        print(self.description)

@@ -6,6 +6,15 @@ class Timetable:
     def __init__(self, classNum):
 
         self.classNum = classNum
+        self.Monday = ""
+        self.Tuesday = ""
+        self.Wednesday = ""
+        self.Thursday = ""
+        self.Friday = ""
+        self.Saturday = "No School\n"
+        self.Sunday = "No School\n"
+
+    def manualInput(self, mon, tue, wed, thur, fri):
         self.Monday = "8:00 - Start od Day\n" \
                       "8:30 - Science\n" \
                       "10:00 - Break\n" \
@@ -19,8 +28,6 @@ class Timetable:
                         "8:30 - ...\n"
         self.Friday = "8:00 - Start of Day\n" \
                       "8:30 - ...\n"
-        self.Saturday = "No School\n"
-        self.Sunday = "No School\n"
 
     def printTimetable(self):
 

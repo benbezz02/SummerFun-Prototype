@@ -11,6 +11,7 @@ class Class:
         self.students = []
         self.employees = []
         self.timetable = Timetables.Timetable(number)
+        self.events = []
 
     def addStudentToClass(self, student):
         if len(self.students) >= self.maxNumStudents:

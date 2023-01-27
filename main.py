@@ -70,13 +70,45 @@ def paymentOperations():
     students[1].printCurrentPayment()
 
 
-def timetablePrinting():
+def timetableOperations():
+    classes[0].timetable.printTimetable()
+
+    print("Manually inputting Timetable...\n")
+    classes[0].timetable.manualInput("8:00 - Start od Day\n 8:30 - Science\n 10:00 - Break\n 11:30 - Physical Education\n 13:00 - End of Day\n",
+                                     "8:00 - Start of Day\n 8:30 - ...\n",
+                                     "8:00 - Start of Day\n 8:30 - ...\n",
+                                     "8:00 - Start of Day\n 8:30 - ...\n",
+                                     "8:00 - Start of Day\n 8:30 - ...\n")
+
     classes[0].timetable.printTimetable()
 
 
 def eventsOperations():
 
+    print("Creating Event...")
     event1 = Events.Event("Cinema Day", "05/07/2022", "Saint Julian's, Malta", "The classes will be going to Eden Cinemas to watch the new Puss in Boots movie.", "Upcoming")
+
+    print("Adding Event to classes...")
+    event1.addEventToClass(classes[0])
+    classes[0].events[0].printEvent()
+    print(classes[0].events[0].status)
+
+    print("\nEditing Event to Completed...")
+    event1.editEvent("Cinema Day", "05/07/2022", "Saint Julian's, Malta", "The classes will be going to Eden Cinemas to watch the new Puss in Boots movie.", "Completed")
+    classes[0].events[0].printEvent()
+    print(classes[0].events[0].status)
+
+
+def fileManagement():
+    print("\nUploading a file...")
+    file = FileManagement.FileManagement("This is a file.")
+
+    file.fileView()
+
+    print("Deleting the file...")
+    file.fileDelete()
+
+    file.fileView()
 
 
 createStudents()
@@ -84,5 +116,6 @@ creatingEmployees()
 classOperations()
 pastStatus()
 paymentOperations()
-timetablePrinting()
+timetableOperations()
 eventsOperations()
+fileManagement()
